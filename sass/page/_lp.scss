@@ -1,0 +1,127 @@
+.lp {
+    padding:2em 0 0 0;
+    table {
+        td {
+            a {
+                @include aSetting_nocolor;
+            }
+            &.date {
+                text-align: center;
+                color: #666;
+                @include screen('mobile') {
+                    text-align: left;
+                }
+            }
+            &.num {
+                text-align: center;
+                color: #666;
+                @include screen('mobile') {
+                    text-align: left;
+                }
+            }
+        }
+    }
+    .list {
+        &>ul, ol {
+            list-style-type: none;
+            padding: 0;
+            border-top: 2px solid $primaryColor;
+            &>li {
+                padding: 1em 0;
+                border-bottom: 1px solid #DDD;
+                position: relative; // outline: 1px solid blue;
+                .tag {
+                    margin-left: 2em;
+                }
+                &>a {
+                    display: block;
+                    padding-left: 2em;
+                    position: relative;
+                    line-height: 1.45em;
+                    color: $color-word;
+                    &:hover {
+                        color: $aHover;
+                    }
+                    .num {
+                        width: 1.5em;
+                        text-align: right;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        &:after {
+                            content: ".";
+                            display: inline-block;
+                        }
+                    }
+                }
+                span.dept {
+                    display: inline-block;
+                    font-size: .938em;
+                    @include screen("mobile") {
+                        display: block;
+                    }
+                }
+                time {
+                    display: block;
+                    color: #AAA;
+                    font-size: .938em;
+                }
+            }
+        }
+    }
+    .book_info{
+        padding: 1em;
+        margin-bottom:1em;
+        border:1px solid $primaryColor;
+        border-radius: .2em;
+        .book_cover{
+            @include make-xs-column(12);
+            @include make-sm-column(3);
+            @include make-md-column(2);
+            @include make-lg-column(2);
+            margin-bottom: 0;
+            @include screen("mobile"){
+                padding-bottom:20px;
+            }
+            .img-container{
+                width:165px;
+            }
+            &:after{
+                content:none;
+            }
+        }
+        .text_container{
+            @include make-xs-column(12);
+            @include make-sm-column(9);
+            @include make-md-column(10);
+            @include make-lg-column(10);
+            @include screen("mobile"){
+                padding-left:0;
+            }
+        }
+    }
+    .date_search{
+        padding-bottom:1em;
+        .form_title{
+            @include screen("xs_mobile"){
+                float:none;
+                margin-bottom: 1em;
+            }
+        }
+    }
+}
+.album {
+    margin: 1em auto;
+    ul {
+        @include li-reset;
+        li {
+            @include make_col(3, 1);
+            overflow: visible;
+            .thumbnail {
+                width: 100%;
+                max-width:90%;
+                margin: 0 auto 1em;
+            }
+        }
+    }
+}
