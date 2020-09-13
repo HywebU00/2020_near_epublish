@@ -446,8 +446,15 @@ div.tag {
         @include make-md-column(3);
         @include make-lg-column(3);
         margin-bottom: 2.5em;
+        &:after{
+            bottom:-5px;
+        }
         .img-container{
             width:200px;
+        }
+        .btn_grp{
+            position: relative;
+            z-index: 1;
         }
     }
     .text_container{
